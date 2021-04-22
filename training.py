@@ -18,7 +18,7 @@ from src.metrics import MSE
 
 
 # Training parameters
-DATASET_PATH = 'datasets/dataset_CAPT_v7.npz'
+DATASET_PATH = './train_data.npz'
 BATCH_SIZE = 8
 NUM_WORKERS = 0
 LR = 2e-4
@@ -46,8 +46,9 @@ print(f"Using device {device}")
 ozeDataset = OzeDataset(DATASET_PATH)
 
 # Split between train, validation and test
+split_length = (7128, 186, 186)
 dataset_train, dataset_val, dataset_test = random_split(
-    ozeDataset, (38000, 1000, 1000))
+    ozeDataset, split_length)
 
 dataloader_train = DataLoader(dataset_train,
                               batch_size=BATCH_SIZE,
