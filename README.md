@@ -44,6 +44,11 @@ $ . .env/bin/activate
 
 The dataset is not included in this repo, and must be downloaded manually. It is comprised of two files, `dataset.npz` contains all input and outputs value, `labels.json` is a detailed list of the variables. Please refer to [#2](https://github.com/maxjcohen/transformer/issues/2) for more information.
 
+Download the dataset from here https://challengedata.ens.fr/challenges/28. Dataset used is x_train_LsAZgHU.csv, y_train_EFo1WyE.csv and x_test_QK7dVsy.csv
+
+Put the files into ./Data folder and run ./src/utils/util.py to generate npz dataset
+
+
 ### Running training script
 
 Using jupyter, run the default `training.ipynb` notebook. All adjustable parameters can be found in the second cell. Careful with the `BATCH_SIZE`, as we are using it to parallelize head and time chunk calculations.
