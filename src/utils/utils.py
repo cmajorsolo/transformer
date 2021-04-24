@@ -229,7 +229,7 @@ def csv2npz_back(dataset_x_path, dataset_y_path, output_path, filename, labels_p
 
     np.savez(path.join(output_path, filename), R=R, X=X, Z=Z)
 
-def csv2npz(dataset_x_path, dataset_y_path, output_path, filename, labels_path='labels.json'):
+def csv2npz(dataset_x_path, dataset_y_path, output_path, filename, labels_path='../../labels.json'):
     """Load input dataset from csv and create x_train tensor."""
     # Load dataset as csv
     x = pd.read_csv(dataset_x_path)
@@ -259,7 +259,7 @@ def csv2npz(dataset_x_path, dataset_y_path, output_path, filename, labels_path='
     np.savez(path.join(output_path, filename), R=R, X=X, Z=Z)
 
 def main():
-    csv2npz('./data/x_train_LsAZgHU.csv', './data/y_train_EFo1WyE.csv', './', 'train_data')
+    csv2npz('../../data/x_train_LsAZgHU.csv', '../../data/y_train_EFo1WyE.csv', '../../', 'train_data')
 
 if __name__ == '__main__':
     main()
